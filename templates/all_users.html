@@ -1,0 +1,53 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'sudhanshu/static/newww.css' %}">
+
+<h3>All Freelancers</h3>
+
+<!-- Search form with one dropdown (for skill) -->
+<div id="search-container">
+    <form id="search-form" method="GET">
+        <!-- Dropdown for skill selection -->
+        <select id="dropdown1" name="dropdown1" class="filter-dropdown">
+            <option value="" disabled selected>Select Skill</option>
+            <option value="web_dev">Full Stack Web Development</option>
+            <option value="graphic_design">Graphic Design</option>
+            <option value="content_writing">Content Writing</option>
+            <option value="seo_speicalist">SEO Specialist</option>
+            <option value="data_analysis">Data Analysis</option>
+            <option value="mobile_dev">Mobile App Development</option>
+            <option value="digital_marketing">Digital Marketing </option>
+            <option value="cloud_computing">Cloud Computing</option>
+            <option value="cyber_security">Cyber Security</option>
+            <option value="ui_ux_design">UI/UX Design</option>
+
+            <!-- Add more options as needed -->
+        </select>
+
+        <button type="submit" class="btn">Search</button>
+    </form>
+
+    <!-- Selected Filters (Optional Display) -->
+    <div id="selected-filters">
+        <p>Selected Filters:</p>
+        <ul id="filter-list"></ul>
+    </div>
+</div>
+
+<!-- Freelancer profiles -->
+<section class="container">
+    {% for user in users %}
+    <div id="profile-container">
+        <div class="col-md-4">
+            <img src="{{user.profile.images.url}}" alt="Profile Image">
+        </div>
+        <div class="text">
+            <h3>{{user.profile.name}}</h3>
+            <h3>{{user.profile.title}}</h3>
+            <h3>{{user.profile.desc}}</h3>
+            <a href="{% url 'viewprofile' user.id %}" class="btn">Checkout</a>
+        </div>
+    </div>
+    {% empty %}
+    <p>No freelancers found matching your criteria.</p>
+    {% endfor %}
+</section>

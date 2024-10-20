@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeLancing Website</title>
+    <link rel="stylesheet" href="{% static 'sudhanshu/static/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+ 
+
+  
+
+  <!-- header section -->
+
+  <header class="header">
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+    
+    <a href="#" class="logo"> <span>My </span>FreeLancing</a>
+
+  <!-- NAV BAR ITEMS -->
+
+  <nav class="navbar">
+    <a href="all_users" style="margin-left: 200px;" >All Freelancers </a>
+    <!-- <a href="hehe"> My FreeLancing Profile </a> -->
+    <a href="#about">About </a>
+    {% if user.is_authenticated %}
+    <a href="profile"> My  Profile </a>
+    <a href="logout">Logout</a><br>
+    <!-- <a href="signup">Register</a> -->
+    <!-- <a>Hello, {{user.first_name}}  </a> -->
+    {% else %}
+    <a href="signupp">Register</a>
+    
+  </nav>
+    <div id="login-btn">
+      <button class="btn">login</button>
+      <i class="far fa-user"></i>  
+  </div>
+  {% endif %}  
+   
+  
+
+<!-- <div id="login-btn">
+    <button class="btn">login</button>
+    <i class="far fa-user"></i>  
+</div> -->
+
+</header>
+
+<!-- login form -->
+<div class="login-form-container">
+
+  <span id="close-login-form" class="fas fa-times"></span>
+
+          <form action="index" method="POST">
+          {% csrf_token %}
+          <h3>User Login</h3> <br>
+          <input type="text" id="username" name="username" placeholder="Enter your username" class="box" required> <br><br><br> 
+          <input type="password" id="pass1" name="pass1" placeholder="Enter your password" class="box" required>  <br><br>
+
+          <!-- {% for message in messages %}
+
+          {% if message.tags == 'error' %}
+          <p style="color: red;">{{message}}</p>
+
+          {% elif message.tags == info %}
+          <script>
+              window.onload = function () {
+                alert('{{message}}')
+            }  
+          </script>
+          
+          {% endif %}
+          {% endfor %} -->
+          <p>Don't have an account? <a href="/signupp">Sign Up</a></p>
+          <input type="submit" value="login now" class="btn">
+        </form>
+</div>
+
+
+
+<!-- Home section starts -->
+
+  <section class="home">
+    <div class="content">
+      <h3>Hire any Freelancers at any time Online</h3>
+      <p> <form action="" method="get">
+        <div id="searchbox">
+          <input type="text" placeholder="What you're looking for today ?" name="" id="">
+          <button>Search</button>
+        </div>
+      </form> </p> 
+
+    </div>
+
+    <div class="image">
+      <img src="{% static 'sudhanshu/static/images/home-img.svg' %}" alt="">
+    </div>
+  </section>
+
+<!-- Home Section ends here -->
+
+
+<section class="about" id="about">
+
+  <h1 class="heading">About Us</h1>
+  <div class="row">
+    <div class="video">
+          <!-- <video src="{% static 'sudhanshu/static/images/about-vid.mp4' %}" loop muted autoplay ></video> -->
+          <video src="{% static 'sudhanshu/static/images/target_transfer.mp4' %}"  autoplay></video>
+    </div>
+    <div class="content">
+      <h3>We will Provide you with numbers of Freelancers around India</h3>
+      <p>Welcome to MyFreeLancing, the premier platform for connecting skilled freelancers in India with businesses and individuals in need of their services. Our user-friendly interface allows clients to search and hire top talent in a variety of fields, including web development, graphic design, writing, and more</p>
+      <a href="all_users" class="btn">Search for a Freelancer</a>
+    </div>
+
+  </div>
+        <div class="row1">
+      <div class="box-container">
+
+        <div class="box">
+          <h3>100+</h3>
+          <p>Freelancers Available </p>
+        </div>
+
+        <div class="box">
+          <h3>100+</h3>
+          <p>Freelancers Available </p>
+        </div>
+
+        <div class="box">
+          <h3>100+</h3>
+          <p>Freelancers Available </p>
+        </div>
+        
+
+      </div>
+        </div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Custom Js link -->
+<script type="text/javascript" src="{% static 'sudhanshu/static/js/jscript.js' %}"></script>
+
+
+
+
+</body>
+</html>

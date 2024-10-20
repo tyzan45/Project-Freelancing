@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'sudhanshu/static/test3.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <h1 class="heading">All Freelancers</h1>
+    {% for user in users %} 
+    <div class="container"></div>
+    <div class="box-container">
+        <div class="image">
+            <img src="{{user.profile.images.url}}" alt="">
+        </div>
+        <div class="content">
+            <h3> Users name goes here</h3>
+            <p> Users desc goes here </p>
+            <a href="#" class="btn">Contact User</a>
+
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>

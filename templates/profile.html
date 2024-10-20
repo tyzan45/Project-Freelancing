@@ -1,0 +1,78 @@
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'sudhanshu/static/prefix.css' %}">
+    <title>Edit Profile</title>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="{% url 'hehe' %}" class="logo">Freelancer Profile</a>
+        <a class="header-logout" href="{% url 'logout' %}">Logout</a>
+    </nav>
+</header>
+
+<main class="main-container">
+    <form class="profile-form" action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="profile-section">
+            <div class="profile-photo">
+                <img src="{{user.profile.profile_img.url}}" alt="Profile Photo">
+                <label for="profile_img">Change Profile Photo</label>
+                {{form.profile_img}}
+            </div>
+
+            <div class="profile-details">
+                <h2>Edit Your Profile</h2>
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    {{form.name}}
+                </div>
+                <div class="input-group">
+                    <label for="title">Your Title</label>
+                    {{form.title}}
+                </div>
+                <div class="input-group">
+                    <label for="desc">Description</label>
+                    {{form.desc}}
+                </div>
+                <div class="input-group">
+                    <label for="instagram">Instagram URL</label>
+                    {{form.instagram}}
+                </div>
+                <div class="input-group">
+                    <label for="projectcomplete">Project Completion Time (in days)</label>
+                    {{form.projectcomplete}}
+                </div>
+                <div class="input-group">
+                    <label for="experience">Freelancing Experience (years)</label>
+                    {{form.experience}}
+                </div>
+                <div class="input-group">
+                    <label for="totalclients">Total Clients Worked With</label>
+                    {{form.totalclients}}
+                </div>
+                <div class="input-group">
+                    <label for="reviews">Total Reviews</label>
+                    {{form.reviews}}
+                </div>
+            </div>
+        </div>
+
+        <div class="creations-section">
+            <h3>Your Work</h3>
+            <img src="{{user.profile.images.url}}" alt="Work Image">
+            <label for="images">Upload More Creations</label>
+            <input type="file" name="images" multiple>
+        </div>
+
+        <button type="submit" class="btn-save">Save Profile</button>
+    </form>
+</main>
+
+</body>
+</html>

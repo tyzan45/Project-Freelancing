@@ -1,0 +1,190 @@
+{% load  static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="{% static 'sudhanshu/static/hehe.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> -->
+
+</head>
+<body>
+
+    <!-- header section starts bro  -->
+
+    <header class="header">
+        <div class="user">
+            <img src="{{user.profile.profile_img.url}}" alt="User Image" width="106%"  srcset="">
+            <h3>{{ user.profile.name }}</h3>
+            <p>{{ user.profile.title }}</p>
+        </div>
+
+        <nav class="navbar1">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#work">Content</a>
+            <a href="#">Contact</a>
+            <a href="profile">Edit My Profile</a>
+            <a href="index">MyFreeLancing</a>
+
+        </nav>
+
+    </header>
+    <!-- header section ends broo -->
+
+        <!-- Menu Button when res is low -->
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <!-- Home  -->
+
+    <section class="home" id="home">
+        <div class="content">
+
+            <h3> {{ user.profile.name }} </h3>
+            <p> {{ user.profile.desc }} </p>
+            <a href="#about" class="btn">About {{ user.profile.name }}</a>
+        </div>       
+
+        <div class="share">
+        <a href="{{ user.profile.instagram }}" class="fab fa-instagram"></a>
+        </div>
+
+
+    </section>
+
+
+    <!-- SECTION ENDS HERE -->
+
+
+    <!-- About Section STARTS HERE  -->
+
+    <section class="about" id="about">
+    
+        <h1 class="heading"><span>About</span> {{user.profile.name}} </h1>
+
+        <div class="content">
+            <h3>My name is <span>{{user.profile.name}}</span></h3>
+            <p> My Expertise:- {{user.profile.title}}</p>
+            <p class="p1"> I'm a {{ user.profile.desc}}</p>
+            <!-- <a href="#" class="btn">Contact Me</a> -->
+       
+     
+
+        <div class="row">
+
+            <div class="box-container">
+                <div class="box">
+                    <h3>{{user.profile.experience}}+</h3>
+                    <p>years experience of FreeLancing</p>
+                </div>
+                <div class="box">
+                    <h3>{{user.profile.totalclients}}+</h3>
+                    <p>Satisfied Customers</p>
+                </div>
+                <div class="box">
+                    <h3>{{user.profile.projectcomplete}}+</h3>
+                    <p>Days to complete the Project</p>
+                </div>
+                <div class="box">
+                    <h3>{{user.profile.reviews}}+</h3>
+                    <p>Customer Reviews</p>
+                </div>
+            </div>
+            <!-- <div class="content">
+                    <h3>My name is <span>{{user.profile.name}}</span></h3>
+                    <p>{{user.profile.desc}}</p>
+                    <a href="#" class="btn">Contact Me</a>
+               
+             </div> -->
+
+        </div>
+
+        <a href="#services" class="btn">Services Provided by {{ user.profile.name }}</a>
+        </div>
+
+    </section>
+
+    <!-- END OF ABOUT SECTION RIP -->
+
+
+    <!-- START OF SERVICES SECTION  -->
+
+
+    <section class="services" id="services">
+
+        <h1 class="heading">Services Provided by<span> {{user.profile.name}} </span></h1>
+        <div class="box-container"> 
+            <div class="box">
+                <i class="fas fa-archive"></i>
+                <h3> Web Design </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit facilis nisi quo sit numquam sapiente quam voluptates repudiandae voluptate quasi!</p>
+
+            </div>
+            <div class="box">
+                <i class="fas fa-archive"></i>
+                <h3> Web Design </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit facilis nisi quo sit numquam sapiente quam voluptates repudiandae voluptate quasi!</p>
+                
+            </div>
+                <div class="box">
+                    <i class="fas fa-archive"></i>
+                    <h3> Web Design </h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit facilis nisi quo sit numquam sapiente quam voluptates repudiandae voluptate quasi!</p>
+            
+                </div>
+                <a href="#work" class="btn" style="text-align: center;">Contents of {{user.profile.name}} </a> 
+                <!-- <a href="#work" class="btn">Contents of {{ user.profile.name }}</a> -->
+        </div>
+        
+       
+    </section>
+    <!-- END OF SERVICES SECTION -->
+
+
+                <!-- Content  Section Starts -->
+
+            <section class="work" id="work">
+                <h1 class="heading">Contents made by <span>{{user.profile.name}}</span></h1>
+
+
+                <div class="box-container">
+
+                    <div class="box">
+                        <img src="{% static 'sudhanshu/static/images/img-1.jpg' %}"  alt="">
+                        <div class="content">
+                            <h3>Project 1</h3>
+                        </div>
+                    </div>
+
+                <div class="box">
+                    <img src="{{user.profile.images.url}}"  alt="">
+                    <div class="content">
+                        <h3>Project 2</h3>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="{% static 'sudhanshu/static/images/img-3.jpg' %}"  alt="">
+                    <div class="content">
+                        <h3>Project 3</h3>
+                    </div>
+                </div>
+                
+                </div>
+                <a href="#content" class="btn" style="text-align: center; justify-content:center; ">Hire {{user.profile.name}} </a> 
+            </section>
+
+
+                <!-- Content sections ends bruh -->
+
+    <!-- Custom Js link -->
+<script type="text/javascript" src="{% static 'sudhanshu/static/js/hehe.js' %}"></script>
+</body>
+</html>

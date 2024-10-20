@@ -1,0 +1,20 @@
+{% load  static %}
+<link rel="stylesheet" href="{% static 'sudhanshu/static/style.css' %}">
+<h3>All Freelancers</h3>
+{% for user in users %} 
+
+<section class="profiless" id="profiles">
+    
+    <div id="profiles-container">
+        
+      <div class="content">
+        <img src="" alt="">
+        <div> 
+            <p> {{ user.profile.name }} </p>    
+            <p> {{ user.objects.filter(username= 'sudhanshu') }} </p>
+        </div>
+    </div>
+
+</section>
+{% endfor %}
+   

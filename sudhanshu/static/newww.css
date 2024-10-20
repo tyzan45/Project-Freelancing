@@ -1,0 +1,150 @@
+:root {
+    --primary-color: #27ae60; /* Green color for buttons */
+    --secondary-color: #444; /* Dark gray for text */
+    --light-gray: #777; /* Lighter gray for secondary text */
+    --background-color: #f4f4f4; /* Background color */
+    --card-bg-color: #fff; /* White for cards */
+    --border-color: #eee; /* Light border color */
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    --box-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+    --border-radius: 12px; /* Smooth round corners */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 20px 0;
+    color: var(--secondary-color);
+}
+
+form {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+form select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--card-bg-color);
+    color: var(--secondary-color);
+    margin-right: 10px;
+    transition: border-color 0.3s ease;
+}
+
+form select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1e8c50;
+}
+
+/* Flex container for freelancer profiles */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+#profile-container {
+    background-color: var(--card-bg-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    width: calc(33.333% - 40px); /* Flexible width for up to 3 cards per row */
+    max-width: 400px; /* Prevent cards from becoming too large */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#profile-container:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: var(--box-shadow-hover);
+}
+
+img {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--border-color); /* Circular border */
+}
+
+.text h3 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin: 10px 0;
+}
+
+.text h3:first-child {
+    font-size: 1.5rem; /* Make the name slightly larger */
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1e8c50;
+    box-shadow: var(--box-shadow-hover);
+}
+
+p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--light-gray);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #profile-container {
+        width: calc(50% - 40px); /* For smaller screens, show 2 cards per row */
+    }
+}
+
+@media (max-width: 480px) {
+    #profile-container {
+        width: calc(100% - 40px); /* For mobile, show 1 card per row */
+    }
+
+    img {
+        height: 100px;
+        width: 100px;
+    }
+}
