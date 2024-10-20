@@ -1,17 +1,17 @@
 :root {
-    --primary-color: #27ae60; /* Green color for buttons */
-    --secondary-color: #444; /* Dark gray for text */
-    --light-gray: #777; /* Lighter gray for secondary text */
-    --background-color: #f4f4f4; /* Background color */
-    --card-bg-color: #fff; /* White for cards */
-    --border-color: #eee; /* Light border color */
-    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
-    --box-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
-    --border-radius: 12px; /* Smooth round corners */
+    --primary-color: #27ae60; 
+    --secondary-color: #444; 
+    --light-gray: #777; 
+    --background-color: #f4f4f4; 
+    --card-bg-color: #fff; 
+    --border-color: #eee; 
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    --box-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15); 
+    --border-radius: 12px; 
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* Modern font */
+    font-family: 'Poppins', sans-serif; 
     background-color: var(--background-color);
     color: var(--secondary-color);
     margin: 0;
@@ -61,7 +61,7 @@ form button:hover {
     background-color: #1e8c50;
 }
 
-/* Flex container for freelancer profiles */
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -76,13 +76,13 @@ form button:hover {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     text-align: center;
-    width: calc(33.333% - 40px); /* Flexible width for up to 3 cards per row */
-    max-width: 400px; /* Prevent cards from becoming too large */
+    width: calc(33.333% - 40px); 
+    max-width: 400px; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #profile-container:hover {
-    transform: translateY(-10px); /* Slight lift on hover */
+    transform: translateY(-10px); 
     box-shadow: var(--box-shadow-hover);
 }
 
@@ -92,7 +92,7 @@ img {
     width: 120px;
     object-fit: cover;
     margin-bottom: 15px;
-    border: 3px solid var(--border-color); /* Circular border */
+    border: 3px solid var(--border-color); 
 }
 
 .text h3 {
@@ -102,7 +102,7 @@ img {
 }
 
 .text h3:first-child {
-    font-size: 1.5rem; /* Make the name slightly larger */
+    font-size: 1.5rem; 
     font-weight: 600;
     color: var(--primary-color);
 }
@@ -131,16 +131,16 @@ p {
     color: var(--light-gray);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     #profile-container {
-        width: calc(50% - 40px); /* For smaller screens, show 2 cards per row */
+        width: calc(50% - 40px); 
     }
 }
 
 @media (max-width: 480px) {
     #profile-container {
-        width: calc(100% - 40px); /* For mobile, show 1 card per row */
+        width: calc(100% - 40px); 
     }
 
     img {
